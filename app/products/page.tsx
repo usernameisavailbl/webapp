@@ -21,21 +21,22 @@ export default function Product() {
 
     return (<div>
         <h1 className="font-bold text-2xl text-center my-4">Product</h1>
-        <div className="flex flex-wrap m-auto justify-center w-[80%] border rounded m-4 p-4 bg-slate-100 mb-6">
+        <div className=" flex flex-wrap m-auto justify-center w-[80%] border rounded m-4 p-4 bg-slate-100 mb-6">
             {
                 products.map((product, index) => {
                     return (
-                        <div key={index} className="shadow-lg rounded-md border w-fit bg-green-100 p-2 m-2">
+                        <div key={index} className="relative shadow-lg rounded-md border w-fit bg-green-100 p-2 m-2">
                             <h2>{index + 1}. {product.name}</h2>
                             <p>{product.description}</p>
                             <Image
-                                    className='rounded-full p-2 m-4'
+                                    className='border-blue-300 border-3 rounded-full p-2 m-4 hover:border-green-300 hover:rotate-12'
                                     src={product.image_url}
                                     width={150}
                                     height={150}
                                     alt="PSU Logo"
                                   />
                             <button className="border bg-pink-200 px-2 py-1 mt-2 rounded hover:font-bold">Buy Now</button>
+                            <span className="absolute bottom-2 right-2 border-2 border-blue shadow px-2 rounded-full bg-amber-400 hover:rotate-45">{index+1}</span>
                         </div>)
                 })
             }
